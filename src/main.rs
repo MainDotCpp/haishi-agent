@@ -26,6 +26,7 @@ fn init() {
     dotenv().ok();
 }
 
+
 async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     let nginx_config_path = env::var("NGINX_CONFIG_PATH")?;
     let www_path = env::var("WWW_PATH")?;
@@ -135,6 +136,7 @@ async fn deploy_domain(domain_id: i32) -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
+    init();
     rocket::build()
         .mount("/", rocket::routes![deploy_domain])
 }
