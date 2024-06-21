@@ -96,14 +96,15 @@ fn unzip_file(zip_file: &File, output_dir: &Path) {
     }
 }
 
-async fn download_website(website_path: &Path, website: &Websites) {
+async fn download_website(domain_path: &Path, website: &Websites) {
     let www_lib_url = env::var("WEB_LIB_PATH").expect("env CONFIG_PATH not config");
     let landing_uuid = website.landing.as_ref().unwrap().uuid.as_ref().unwrap();
     let resource_url = format!("{}{}.zip", www_lib_url, landing_uuid);
-    info!("下载网站 {} -> {}",resource_url, website_path.to_str().unwrap());
-    if !website_path.exists() {
-        fs::create_dir_all(&website_path).expect("dir create fail");
+    info!("下载网站 {} -> {}",resource_url, domain_path.to_str().unwrap());
+    if !domain_path.exists() {
+        fs::create_dir_all(&domain_path).expect("dir create fail");
     }
+    let website_path = domain_path.join(website.id.as_ref().unwrap().to_string());
     let response = reqwest::get(&resource_url).await.expect("download fail");
     let zip_path = website_path.join(format!("{}.zip", landing_uuid));
     let mut file = File::create(&zip_path).expect("file create fail");
@@ -113,13 +114,13 @@ async fn download_website(website_path: &Path, website: &Websites) {
 
     // 解压
     info!("解压 -> {}", zip_path.to_str().unwrap());
-    unzip_file(&File::open(&zip_path).unwrap(), &website_path);
+    unzip_file(&File::open(&zip_path).unwrap(), &domain_path);
 
     // 删除压缩包
     fs::remove_file(zip_path).expect("file remove fail");
 
     // 写入配置文件
-    let config_path = website_path.join("config.json");
+    let config_path = website_path.join(landing_uuid).join("config.json");
     let config_content = serde_json::to_string(website).expect("json serialize fail");
     fs::write(config_path, config_content).expect("file write fail");
 }
