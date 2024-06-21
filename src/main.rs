@@ -114,7 +114,7 @@ async fn download_website(domain_path: &Path, website: &Websites) {
 
     // 解压
     info!("解压 -> {}", zip_path.to_str().unwrap());
-    unzip_file(&File::open(&zip_path).unwrap(), &domain_path);
+    unzip_file(&File::open(&zip_path).unwrap(), &website_path);
 
     // 删除压缩包
     fs::remove_file(zip_path).expect("file remove fail");
