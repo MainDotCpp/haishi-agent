@@ -1,5 +1,5 @@
 use std::{env, fs};
-use std::fs::{copy, File};
+use std::fs::{File};
 use std::io::Write;
 use std::path::Path;
 

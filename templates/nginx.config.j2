@@ -54,7 +54,7 @@ server
     }
 
 {% for website in config.websites %}
-    location ~^ {{ website.path }} {
+    location ^~ {{ website.path }} {
         {% if website.type == 'LANDING' %}root /www/wwwroot/{{ config.domain }}/{{ website.landing.uuid }}/;
         {% elif website.type == 'LINK' %}proxy_pass https://d-l.ink/l/;{% endif %}
     }
