@@ -1,0 +1,5 @@
+/.idea/
+/target/
+/temp_*/
+
+haishi-agent.iml
