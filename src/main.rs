@@ -14,6 +14,7 @@ use zip::ZipArchive;
 use crate::domain_config::Websites;
 
 mod domain_config;
+
 #[tokio::main]
 async fn main() {
     init();
@@ -60,8 +61,8 @@ async fn save_config() {
     let config_content = tera.render("nginx.config.j2", &context).expect("template render fail");
 
     // 写入到文件
-    let config_path = format!("{}\\{}.conf", nginx_config_path, domain_config.domain.as_ref().unwrap());
-    info!("写入配置文件 -> {}", config_path);
+    let config_path = Path::new(&nginx_config_path).join(domain_config.domain.as_ref().unwrap());
+    info!("写入配置文件 -> {}", config_path.to_str().unwrap());
     fs::write(config_path, config_content).expect("file write fail");
 
     // 重启NGINX
