@@ -37,7 +37,7 @@ async fn save_config() {
 
 
     // 获取域名配置数据
-    let response = reqwest::get("http://localhost:8888/api/domain/getAgentConfig?id=502").await.expect("config load fail");
+    let response = reqwest::get("https://console.d-l.ink/api/domain/getAgentConfig?id=502").await.expect("config load fail");
     let domain_config = response.json::<domain_config::DomainConfig>().await.expect("json parse fail");
 
 
