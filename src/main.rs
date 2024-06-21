@@ -61,7 +61,10 @@ async fn save_config() {
     let config_content = tera.render("nginx.config.j2", &context).expect("template render fail");
 
     // 写入到文件
-    let config_path = Path::new(&nginx_config_path).join(domain_config.domain.as_ref().unwrap());
+    let config_path = Path::new(&nginx_config_path).join(format!("{}.conf", domain_config.domain.as_ref().unwrap()));
+    if !config_path.exists() {
+        fs::create_dir_all(&config_path).expect("dir create fail");
+    }
     info!("写入配置文件 -> {}", config_path.to_str().unwrap());
     fs::write(config_path, config_content).expect("file write fail");
 
