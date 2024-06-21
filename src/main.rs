@@ -1,9 +1,11 @@
-use std::{env, fs};
+use std::{env, fs, io};
+use std::error::Error;
 use std::fs::{File};
 use std::io::Write;
 use std::path::Path;
 
 use dotenv::dotenv;
+use rocket::{get, launch};
 use tera::{Context, Tera};
 use tracing::info;
 use tracing_subscriber::fmt;
@@ -15,14 +17,6 @@ use crate::domain_config::Websites;
 
 mod domain_config;
 
-#[tokio::main]
-async fn main() {
-    init();
-    let web_lib_path = env::var("WEB_LIB_PATH").expect("env WEB_LIB_PATH not config");
-    info!(web_lib_path);
-
-    save_config().await;
-}
 
 fn init() {
     tracing_subscriber::registry()
@@ -32,15 +26,14 @@ fn init() {
     dotenv().ok();
 }
 
-async fn save_config() {
-    let nginx_config_path = env::var("NGINX_CONFIG_PATH").expect("env CONFIG_PATH not config");
-    let www_path = env::var("WWW_PATH").expect("env CONFIG_PATH not config");
+async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
+    let nginx_config_path = env::var("NGINX_CONFIG_PATH")?;
+    let www_path = env::var("WWW_PATH")?;
 
 
     // 获取域名配置数据
-    let response = reqwest::get("https://console.d-l.ink/api/domain/getAgentConfig?id=502").await.expect("config load fail");
-    let domain_config = response.json::<domain_config::DomainConfig>().await.expect("json parse fail");
-
+    let response = reqwest::get(format!("https://console.d-l.ink/api/domain/getAgentConfig?id={}", domain_id)).await.expect("config load fail");
+    let domain_config = response.json::<domain_config::DomainConfig>().await?;
 
     // NGINX 配置文件目录
 
@@ -53,20 +46,20 @@ async fn save_config() {
     }
 
     // 加载模板引擎
-    let tera = Tera::new("templates/*").expect("template load fail");
+    let tera = Tera::new("templates/*")?;
     let mut context = Context::new();
     context.insert("config", &domain_config);
 
     // 渲染模板
-    let config_content = tera.render("nginx.config.j2", &context).expect("template render fail");
+    let config_content = tera.render("nginx.config.j2", &context)?;
 
     // 写入到文件
     let config_path = Path::new(&nginx_config_path).join(format!("{}.conf", domain_config.domain.as_ref().unwrap()));
     if !config_path.exists() {
-        fs::create_dir_all(&config_path).expect("dir create fail");
+        fs::create_dir_all(&config_path)?;
     }
     info!("写入配置文件 -> {}", config_path.to_str().unwrap());
-    fs::write(config_path, config_content).expect("file write fail");
+    fs::write(config_path, config_content)?;
 
     // 重启NGINX
     info!("检测NGINX配置文件是否正确");
@@ -78,6 +71,7 @@ async fn save_config() {
         let nginx_reload = std::process::Command::new("nginx").arg("-s").arg("reload").output().expect("nginx reload fail");
         info!("{}", String::from_utf8_lossy(&nginx_reload.stdout));
     }
+    return Ok(true);
 }
 
 
@@ -122,4 +116,25 @@ async fn download_website(website_path: &Path, website: &Websites) {
 
     // 删除压缩包
     fs::remove_file(zip_path).expect("file remove fail");
+
+    // 写入配置文件
+    let config_path = website_path.join("config.json");
+    let config_content = serde_json::to_string(website).expect("json serialize fail");
+    fs::write(config_path, config_content).expect("file write fail");
+}
+
+
+#[get("/deploy/domain?<domain_id>")]
+async fn deploy_domain(domain_id: i32) -> &'static str {
+    info!("开始部署");
+    match save_config(domain_id).await {
+        Ok(_) => "OK",
+        Err(_) => "FAIL"
+    }
+}
+
+#[launch]
+fn rocket() -> _ {
+    rocket::build()
+        .mount("/", rocket::routes![deploy_domain])
 }
