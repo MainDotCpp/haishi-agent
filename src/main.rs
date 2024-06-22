@@ -2,7 +2,7 @@ use std::{env, fs, io};
 use std::error::Error;
 use std::fs::{File};
 use std::io::Write;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 use dotenv::dotenv;
 use rocket::{get, launch};
@@ -76,14 +76,19 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
 }
 
 
-fn unzip_file(zip_file: &File, output_dir: &Path) {
+fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
+    let zip_file_name = zip_file.file_name().as_ref().unwrap().to_str().unwrap();
+    let zip_file = File::open(zip_file).unwrap();
     let mut archive = ZipArchive::new(zip_file).unwrap();
+    // 获取压缩包文件名
 
     for i in 0..archive.len() {
         let mut file = archive.by_index(i).unwrap();
         let mut file_name = file.name().to_owned();
         // ZIP迭代器的第一个文件名是目录名，需要去掉
         file_name.remove(0);
+        let removal_parent_dir = format!("{}/", zip_file_name);
+        file_name = file_name.strip_prefix(&removal_parent_dir).unwrap().to_owned();
         let out_path = output_dir.join(file_name);
         info!("解压文件 -> {}", out_path.to_str().unwrap());
 
@@ -97,15 +102,20 @@ fn unzip_file(zip_file: &File, output_dir: &Path) {
 }
 
 async fn download_website(domain_path: &Path, website: &Websites) {
+    // 处理路径
     let www_lib_url = env::var("WEB_LIB_PATH").expect("env CONFIG_PATH not config");
     let landing_uuid = website.landing.as_ref().unwrap().uuid.as_ref().unwrap();
     let resource_url = format!("{}{}.zip", www_lib_url, landing_uuid);
-    let website_path = domain_path.join(website.id.as_ref().unwrap().to_string());
+    let mut website_path = domain_path.join(website.id.as_ref().unwrap().to_string());
+    website.path.as_ref().unwrap().split("/").for_each(|path| {
+        website_path = domain_path.join(path);
+    });
     info!("下载网站 {} -> {}",resource_url, website_path.to_str().unwrap());
     if !website_path.exists() {
         fs::create_dir_all(&website_path).expect("dir create fail");
     }
     let response = reqwest::get(&resource_url).await.expect("download fail");
+
     let zip_path = website_path.join(format!("{}.zip", landing_uuid));
     let mut file = File::create(&zip_path).expect("file create fail");
     let content = response.bytes().await.expect("download fail");
@@ -114,10 +124,7 @@ async fn download_website(domain_path: &Path, website: &Websites) {
 
     // 解压
     info!("解压 -> {}", zip_path.to_str().unwrap());
-    unzip_file(&File::open(&zip_path).unwrap(), &website_path);
-
-    // 删除压缩包
-    fs::remove_file(zip_path).expect("file remove fail");
+    unzip_file(zip_path, &website_path);
 
     // 写入配置文件
     let config_path = website_path.join(landing_uuid).join("config.json");
