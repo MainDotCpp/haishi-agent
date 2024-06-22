@@ -124,7 +124,7 @@ async fn download_website(domain_path: &Path, website: &Websites) {
 
     // 解压
     info!("解压 -> {}", zip_path.to_str().unwrap());
-    unzip_file(zip_path, &website_path);
+    unzip_file(&zip_path, &website_path);
 
     // 写入配置文件
     let config_path = website_path.join(landing_uuid).join("config.json");
