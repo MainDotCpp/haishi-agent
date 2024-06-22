@@ -131,7 +131,7 @@ async fn download_website(domain_path: &Path, website: &Websites) {
     unzip_file(&zip_path, &website_path);
 
     // 写入配置文件
-    let config_path = website_path.join(landing_uuid).join("config.json");
+    let config_path = website_path.join("config.json");
     let config_content = serde_json::to_string(website).expect("json serialize fail");
     fs::write(config_path, config_content).expect("file write fail");
 }
