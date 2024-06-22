@@ -65,10 +65,12 @@ server
     }
 
 {% for website in config.websites %}
-    location ^~ {{ website.path }} {
         {% if website.type == 'LANDING' %}
-        {% elif website.type == 'LINK' %}proxy_pass https://d-l.ink/l/;{% endif %}
-    }
+        {% elif website.type == 'LINK' %}
+        location ^~ {{ website.path }} {
+            proxy_pass https://d-l.ink/l/;
+        }
+        {% endif %}
 {% endfor %}
 
 
