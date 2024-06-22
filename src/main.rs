@@ -87,7 +87,7 @@ fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
         let mut file_name = file.name().to_owned();
         // ZIP迭代器的第一个文件名是目录名，需要去掉
         file_name.remove(0);
-        let removal_parent_dir = format!("{}/", zip_file_name);
+        let removal_parent_dir = format!("{}/", zip_file_name.strip_suffix(".zip").unwrap());
         info!(file_name);
         info!(removal_parent_dir);
         if file_name.starts_with(&removal_parent_dir) {
