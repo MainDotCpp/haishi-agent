@@ -37,11 +37,14 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     let domain_config = response.json::<domain_config::DomainConfig>().await?;
 
     // NGINX 配置文件目录
-
+    let www_path = Path::new(&www_path);
+    let website_path = www_path.join(domain_config.domain.as_ref().unwrap());
+    // 删除目录所有文件
+    if website_path.exists() {
+        fs::remove_dir_all(&website_path)?;
+    }
     for website in domain_config.websites.as_ref().unwrap() {
         if website.websites_type.as_ref().unwrap().eq("LANDING") {
-            let website_path = Path::new(&www_path);
-            let website_path = website_path.join(domain_config.domain.as_ref().unwrap());
             download_website(&website_path, &website).await;
         }
     }
