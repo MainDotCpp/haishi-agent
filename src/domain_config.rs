@@ -151,6 +151,9 @@ pub struct Websites {
 
 	#[serde(rename = "orders")]
 	pub orders: Option<Vec<Orders>>,
+
+	#[serde(rename = "targetLink")]
+	pub target_link: Option<String>,
 }
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DomainConfig {
