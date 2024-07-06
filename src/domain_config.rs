@@ -154,6 +154,9 @@ pub struct Websites {
 
 	#[serde(rename = "targetLink")]
 	pub target_link: Option<String>,
+
+	#[serde(rename = "extraScript")]
+	pub extra_script: Option<String>,
 }
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DomainConfig {
