@@ -46,6 +46,9 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     for website in domain_config.websites.as_ref().unwrap() {
         if website.websites_type.as_ref().unwrap().eq("LANDING") {
             download_website(&website_path, &website).await;
+        }else if website.websites_type.as_ref().unwrap().eq("LINK") {
+            generate_path_dir(&website_path, &website).await;
+
         }
     }
 
@@ -108,6 +111,25 @@ fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
     }
 }
 
+async fn generate_path_dir(domain_path: &Path, website: &Websites) {
+    let mut website_path = domain_path.join(website.id.as_ref().unwrap().to_string());
+    website.path.as_ref().unwrap().split("/").for_each(|path| {
+        website_path = domain_path.join(path);
+    });
+    if !website_path.exists() {
+        fs::create_dir_all(&website_path).expect("dir create fail");
+    }
+        // 写入配置文件
+        let config_path = website_path.join("config.json");
+        let config_content = serde_json::to_string(website).expect("json serialize fail");
+        fs::write(config_path, config_content).expect("file write fail");
+
+        // 写入index.php文件
+        let index_path = website_path.join("index.php");
+        let index_content = "<?php require_once '/www/wwwroot/engine.php' ?>";
+        fs::write(index_path, index_content).expect("file write fail");
+    Ok(())
+}
 async fn download_website(domain_path: &Path, website: &Websites) {
     // 处理路径
     let www_lib_url = env::var("WEB_LIB_PATH").expect("env CONFIG_PATH not config");
