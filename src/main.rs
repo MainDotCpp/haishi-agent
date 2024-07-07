@@ -1,7 +1,7 @@
-use std::{env, fs, io};
-use std::error::Error;
-use std::fs::{File};
+use std::fs::File;
 use std::io::Write;
+use std::{env, fs};
+use std::error::Error;
 use std::path::{Path, PathBuf};
 
 use dotenv::dotenv;
@@ -128,7 +128,6 @@ async fn generate_path_dir(domain_path: &Path, website: &Websites) {
         let index_path = website_path.join("index.php");
         let index_content = "<?php require_once '/www/wwwroot/engine.php' ?>";
         fs::write(index_path, index_content).expect("file write fail");
-    Ok(())
 }
 async fn download_website(domain_path: &Path, website: &Websites) {
     // 处理路径
