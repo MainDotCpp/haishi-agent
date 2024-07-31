@@ -1,8 +1,8 @@
+use std::error::Error;
 use std::fs::File;
 use std::io::Write;
-use std::{env, fs};
-use std::error::Error;
 use std::path::{Path, PathBuf};
+use std::{env, fs};
 
 use dotenv::dotenv;
 use rocket::{get, launch};
@@ -17,28 +17,28 @@ use crate::domain_config::Websites;
 
 mod domain_config;
 
-
 fn init() {
-    tracing_subscriber::registry()
-        .with(fmt::layer())
-        .init();
+    tracing_subscriber::registry().with(fmt::layer()).init();
 
     dotenv().ok();
 }
-
 
 async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     let nginx_config_path = env::var("NGINX_CONFIG_PATH")?;
     let www_path = env::var("WWW_PATH")?;
 
-
     // 获取域名配置数据
-    let response = reqwest::get(format!("https://console.d-l.ink/api/domain/getAgentConfig?id={}", domain_id)).await.expect("config load fail");
+    let response = reqwest::get(format!(
+        "https://console.d-l.ink/api/domain/getAgentConfig?id={}",
+        domain_id
+    ))
+    .await
+    .expect("config load fail");
     let domain_config = response.json::<domain_config::DomainConfig>().await?;
 
     // NGINX 配置文件目录
     let www_path = Path::new(&www_path);
-    let website_path = www_path.join(domain_config.domain.as_ref().unwrap());
+    let website_path = www_path.join(format!("{}/index", domain_config.domain.as_ref().unwrap()));
     // 删除目录所有文件
     if website_path.exists() {
         fs::remove_dir_all(&website_path)?;
@@ -46,9 +46,8 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     for website in domain_config.websites.as_ref().unwrap() {
         if website.websites_type.as_ref().unwrap().eq("LANDING") {
             download_website(&website_path, &website).await;
-        }else if website.websites_type.as_ref().unwrap().eq("LINK") {
+        } else if website.websites_type.as_ref().unwrap().eq("LINK") {
             generate_path_dir(&website_path, &website).await;
-
         }
     }
 
@@ -65,22 +64,29 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     if !config_path.exists() {
         fs::create_dir_all(&config_path)?;
     }
-    info!("写入配置文件 -> {}", config_path.join(format!("{}.conf", domain_config.domain.as_ref().unwrap())).to_str().unwrap());
+
+    let config_path = config_path.join(format!("{}.conf", domain_config.domain.as_ref().unwrap()));
+    info!("写入配置文件 -> {}", config_path.to_str().unwrap());
     fs::write(config_path, config_content)?;
 
     // 重启NGINX
     info!("检测NGINX配置文件是否正确");
-    let nginx_test = std::process::Command::new("nginx").arg("-t").output().expect("nginx test fail");
+    let nginx_test = std::process::Command::new("docker")
+        .args(["exec", "openresty", "nginx", "-t"])
+        .output()
+        .expect("nginx test fail");
     info!("{}", String::from_utf8_lossy(&nginx_test.stdout));
     // 没有问题则重启
     if nginx_test.status.success() {
         info!("重启NGINX");
-        let nginx_reload = std::process::Command::new("nginx").arg("-s").arg("reload").output().expect("nginx reload fail");
+        let nginx_reload = std::process::Command::new("docker")
+            .args(["exec", "openresty", "nginx", "-s", "reload"])
+            .output()
+            .expect("nginx reload fail");
         info!("{}", String::from_utf8_lossy(&nginx_reload.stdout));
     }
     return Ok(true);
 }
-
 
 fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
     let zip_file_name = zip_file.file_name().as_ref().unwrap().to_str().unwrap();
@@ -97,7 +103,10 @@ fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
         info!(file_name);
         info!(removal_parent_dir);
         if file_name.starts_with(&removal_parent_dir) {
-            file_name = file_name.strip_prefix(&removal_parent_dir).unwrap().to_owned();
+            file_name = file_name
+                .strip_prefix(&removal_parent_dir)
+                .unwrap()
+                .to_owned();
         }
         let out_path = output_dir.join(file_name);
         info!("解压文件 -> {}", out_path.to_str().unwrap());
@@ -119,15 +128,15 @@ async fn generate_path_dir(domain_path: &Path, website: &Websites) {
     if !website_path.exists() {
         fs::create_dir_all(&website_path).expect("dir create fail");
     }
-        // 写入配置文件
-        let config_path = website_path.join("config.json");
-        let config_content = serde_json::to_string(website).expect("json serialize fail");
-        fs::write(config_path, config_content).expect("file write fail");
+    // 写入配置文件
+    let config_path = website_path.join("config.json");
+    let config_content = serde_json::to_string(website).expect("json serialize fail");
+    fs::write(config_path, config_content).expect("file write fail");
 
-        // 写入index.php文件
-        let index_path = website_path.join("index.php");
-        let index_content = "<?php require_once '/www/wwwroot/engine.php' ?>";
-        fs::write(index_path, index_content).expect("file write fail");
+    // 写入index.php文件
+    let index_path = website_path.join("index.php");
+    let index_content = "<?php require_once '/www/wwwroot/engine.php' ?>";
+    fs::write(index_path, index_content).expect("file write fail");
 }
 async fn download_website(domain_path: &Path, website: &Websites) {
     // 处理路径
@@ -138,7 +147,11 @@ async fn download_website(domain_path: &Path, website: &Websites) {
     website.path.as_ref().unwrap().split("/").for_each(|path| {
         website_path = domain_path.join(path);
     });
-    info!("下载网站 {} -> {}",resource_url, website_path.to_str().unwrap());
+    info!(
+        "下载网站 {} -> {}",
+        resource_url,
+        website_path.to_str().unwrap()
+    );
     if !website_path.exists() {
         fs::create_dir_all(&website_path).expect("dir create fail");
     }
@@ -160,19 +173,17 @@ async fn download_website(domain_path: &Path, website: &Websites) {
     fs::write(config_path, config_content).expect("file write fail");
 }
 
-
 #[get("/deploy/domain?<domain_id>")]
 async fn deploy_domain(domain_id: i32) -> &'static str {
     info!("开始部署");
     match save_config(domain_id).await {
         Ok(_) => "OK",
-        Err(_) => "FAIL"
+        Err(_) => "FAIL",
     }
 }
 
 #[launch]
 fn rocket() -> _ {
     init();
-    rocket::build()
-        .mount("/", rocket::routes![deploy_domain])
+    rocket::build().mount("/", rocket::routes![deploy_domain])
 }
