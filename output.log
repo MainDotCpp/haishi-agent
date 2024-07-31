@@ -1,0 +1,1203 @@
+nohup: ignoring input
+[2m2024-07-28T18:08:13.788346Z[0m [32m INFO[0m [2mrocket::launch[0m[2m:[0m Configured for release.    
+[2m2024-07-28T18:08:13.788379Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m address: 127.0.0.1    
+[2m2024-07-28T18:08:13.788386Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m port: 8000    
+[2m2024-07-28T18:08:13.788390Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m workers: 8    
+[2m2024-07-28T18:08:13.788394Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m max blocking threads: 512    
+[2m2024-07-28T18:08:13.788397Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m ident: Rocket    
+[2m2024-07-28T18:08:13.788402Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m IP header: X-Real-IP    
+[2m2024-07-28T18:08:13.788406Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m limits: bytes = 8KiB, data-form = 2MiB, file = 1MiB, form = 32KiB, json = 1MiB, msgpack = 1MiB, string = 8KiB    
+[2m2024-07-28T18:08:13.788418Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m temp dir: /tmp    
+[2m2024-07-28T18:08:13.788423Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m http/2: true    
+[2m2024-07-28T18:08:13.788429Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m keep-alive: 5s    
+[2m2024-07-28T18:08:13.788434Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m tls: disabled    
+[2m2024-07-28T18:08:13.788438Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m shutdown: ctrlc = true, force = true, signals = [SIGTERM], grace = 2s, mercy = 3s    
+[2m2024-07-28T18:08:13.788445Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m log level: critical    
+[2m2024-07-28T18:08:13.788448Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m cli colors: true    
+[2m2024-07-28T18:08:13.788476Z[0m [32m INFO[0m [2mrocket::launch[0m[2m:[0m Routes:    
+[2m2024-07-28T18:08:13.788711Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-28T18:08:13.788726Z[0m [32m INFO[0m [2mrocket::launch[0m[2m:[0m Fairings:    
+[2m2024-07-28T18:08:13.788729Z[0m [32m INFO[0m [2mrocket::launch::_[0m[2m:[0m Shield (liftoff, response, singleton)    
+[2m2024-07-28T18:08:13.788787Z[0m [32m INFO[0m [2mrocket::shield::shield[0m[2m:[0m Shield:    
+[2m2024-07-28T18:08:13.788791Z[0m [32m INFO[0m [2mrocket::shield::shield::_[0m[2m:[0m Permissions-Policy: interest-cohort=()    
+[2m2024-07-28T18:08:13.788794Z[0m [32m INFO[0m [2mrocket::shield::shield::_[0m[2m:[0m X-Frame-Options: SAMEORIGIN    
+[2m2024-07-28T18:08:13.788797Z[0m [32m INFO[0m [2mrocket::shield::shield::_[0m[2m:[0m X-Content-Type-Options: nosniff    
+[2m2024-07-28T18:08:13.788807Z[0m [33m WARN[0m [2mrocket::launch[0m[2m:[0m Rocket has launched from http://127.0.0.1:8000    
+[2m2024-07-28T18:08:25.511307Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:08:25.511354Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-28T18:08:25.511387Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-28T18:08:25.511410Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-28T18:08:25.511451Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-28T18:08:25.511455Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-28T18:08:25.511474Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=15,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-28T18:08:25.511527Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-28T18:08:25.511575Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=15 text/plain:    
+[2m2024-07-28T18:08:25.511620Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-28T18:08:25.511638Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-28T18:08:25.519861Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:08:25.519901Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:08:25.519926Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:08:25.520111Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:08:25.560048Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:08:25.562010Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:08:25.568130Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:08:25.568182Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:08:25.574677Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:08:25.575085Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:08:25.580730Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:08:25.580754Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:08:25.580768Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:08:25.580796Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:08:25.581157Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:08:25.583071Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:08:25.588640Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:08:25.588670Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:08:25.592442Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:08:25.592528Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:08:25.592537Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/ppcstoke.com/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip
+[2m2024-07-28T18:08:25.592611Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:08:25.592617Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:08:25.592623Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:08:25.592644Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.php"
+[2m2024-07-28T18:08:25.592650Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:08:25.592655Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/index.php
+[2m2024-07-28T18:08:25.592983Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.html"
+[2m2024-07-28T18:08:25.592990Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:08:25.592996Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/index.html
+[2m2024-07-28T18:08:25.593371Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-28T18:08:25.593392Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-28T18:08:25.594252Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/ppcstoke.com.conf
+[2m2024-07-28T18:08:25.594350Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-28T18:08:25.816222Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T18:08:25.816326Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-28T18:08:25.816378Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-28T18:08:25.816415Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-28T18:08:25.816468Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-28T18:08:25.816487Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-28T18:08:25.816494Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-28T18:08:25.816502Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-28T18:08:25.816559Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-28T18:08:25.816564Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-28T18:08:35.817451Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:08:35.817479Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-28T18:08:35.817485Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-28T18:08:35.817490Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:08:35.817494Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-28T18:08:35.817498Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:08:35.817502Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:08:35.817513Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:08:35.817517Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-28T18:08:35.817561Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-28T18:09:50.568177Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:09:50.568208Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-28T18:09:50.568229Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-28T18:09:50.568238Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-28T18:09:50.568256Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-28T18:09:50.568261Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-28T18:09:50.568274Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=15,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-28T18:09:50.568320Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-28T18:09:50.568339Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=15 text/plain:    
+[2m2024-07-28T18:09:50.568360Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-28T18:09:50.568371Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-28T18:09:50.574541Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.574569Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:09:50.574584Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:09:50.574718Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:09:50.575144Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:09:50.577011Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:09:50.583066Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:09:50.583103Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.596650Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:09:50.596899Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:09:50.602690Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.602715Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:09:50.602737Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:09:50.602767Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:09:50.603118Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:09:50.604955Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:09:50.610843Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:09:50.610872Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.614659Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:09:50.614679Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:09:50.614690Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/ppcstoke.com/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip
+[2m2024-07-28T18:09:50.614748Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:09:50.614753Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:09:50.614757Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:09:50.614780Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.php"
+[2m2024-07-28T18:09:50.614783Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:09:50.614787Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/index.php
+[2m2024-07-28T18:09:50.614984Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.html"
+[2m2024-07-28T18:09:50.614988Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:09:50.614993Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/index.html
+[2m2024-07-28T18:09:50.615241Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/14724aac-7c40-475b-955a-b25168f30943.zip -> /www/wwwroot/ppcstoke.com/test
+[2m2024-07-28T18:09:50.620415Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.620434Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:09:50.620444Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:09:50.620470Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:09:50.620946Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:09:50.622766Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:09:50.628229Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:09:50.628260Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.630175Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m put; add idle connection for ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.630194Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pooling idle connection for ("https", console.d-l.ink)
+[2m2024-07-28T18:09:50.630254Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/ppcstoke.com/test
+[2m2024-07-28T18:09:50.630258Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/ppcstoke.com/test/14724aac-7c40-475b-955a-b25168f30943.zip
+[2m2024-07-28T18:09:50.630299Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:09:50.630304Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:09:50.630308Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/test/
+[2m2024-07-28T18:09:50.630320Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/index.php"
+[2m2024-07-28T18:09:50.630324Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:09:50.630327Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/test/index.php
+[2m2024-07-28T18:09:50.630419Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/index.html"
+[2m2024-07-28T18:09:50.630423Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:09:50.630426Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/test/index.html
+[2m2024-07-28T18:09:50.630549Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-28T18:09:50.630558Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-28T18:09:50.631014Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/ppcstoke.com.conf
+[2m2024-07-28T18:09:50.631121Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-28T18:09:50.853459Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T18:09:50.853552Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-28T18:09:50.853582Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-28T18:09:50.853625Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-28T18:09:50.853665Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-28T18:09:50.853680Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-28T18:09:50.853684Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-28T18:09:50.853690Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-28T18:09:50.853746Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-28T18:09:50.853751Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-28T18:10:00.854776Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:10:00.854823Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-28T18:10:00.854840Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-28T18:10:00.854846Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:10:00.854852Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-28T18:10:00.854857Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:10:00.854863Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:10:00.854868Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:10:00.854874Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-28T18:10:00.854929Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-28T18:11:17.118710Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:11:17.118740Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-28T18:11:17.118759Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-28T18:11:17.118769Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-28T18:11:17.118789Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-28T18:11:17.118794Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-28T18:11:17.118803Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=15,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-28T18:11:17.118921Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-28T18:11:17.118944Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=15 text/plain:    
+[2m2024-07-28T18:11:17.118963Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-28T18:11:17.118975Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-28T18:11:17.124247Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.124270Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:11:17.124285Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:11:17.124383Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:11:17.126269Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:11:17.128135Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:11:17.133831Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:11:17.133863Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.141006Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:11:17.141314Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:11:17.147174Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.147198Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:11:17.147209Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:11:17.147245Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:11:17.186906Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:11:17.188760Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:11:17.195349Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:11:17.195386Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.199143Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:11:17.199166Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:11:17.199175Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/ppcstoke.com/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip
+[2m2024-07-28T18:11:17.199221Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:11:17.199226Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:11:17.199230Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/
+[2m2024-07-28T18:11:17.199246Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.php"
+[2m2024-07-28T18:11:17.199249Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:11:17.199256Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/index.php
+[2m2024-07-28T18:11:17.199455Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.html"
+[2m2024-07-28T18:11:17.199462Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:11:17.199468Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/index.html
+[2m2024-07-28T18:11:17.199761Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/14724aac-7c40-475b-955a-b25168f30943.zip -> /www/wwwroot/ppcstoke.com/test
+[2m2024-07-28T18:11:17.205286Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.205316Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:11:17.205337Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:11:17.205368Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:11:17.205725Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:11:17.207557Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:11:17.213914Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:11:17.213947Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.215867Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m put; add idle connection for ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.215881Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pooling idle connection for ("https", console.d-l.ink)
+[2m2024-07-28T18:11:17.215951Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/ppcstoke.com/test
+[2m2024-07-28T18:11:17.215955Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/ppcstoke.com/test/14724aac-7c40-475b-955a-b25168f30943.zip
+[2m2024-07-28T18:11:17.215998Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:11:17.216002Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:11:17.216007Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/test/
+[2m2024-07-28T18:11:17.216020Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/index.php"
+[2m2024-07-28T18:11:17.216024Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:11:17.216027Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/test/index.php
+[2m2024-07-28T18:11:17.216116Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/index.html"
+[2m2024-07-28T18:11:17.216121Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-28T18:11:17.216124Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/ppcstoke.com/test/index.html
+[2m2024-07-28T18:11:17.216259Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-28T18:11:17.216273Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-28T18:11:17.216887Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/ppcstoke.com.conf
+[2m2024-07-28T18:11:17.216985Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-28T18:11:17.390607Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T18:11:17.390631Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-28T18:11:17.560995Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T18:11:17.561112Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-28T18:11:17.561148Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-28T18:11:17.561207Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-28T18:11:17.561255Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-28T18:11:17.561275Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-28T18:11:17.561279Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-28T18:11:17.561285Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-28T18:11:17.561342Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-28T18:11:17.561350Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-28T18:11:22.562162Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:11:22.562211Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-28T18:11:22.562217Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-28T18:11:22.562224Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:11:22.562228Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-28T18:11:22.562233Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:11:22.562238Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:11:22.562242Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:11:22.562248Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-28T18:11:22.562301Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-28T18:11:25.430330Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:11:25.430360Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-28T18:11:25.430372Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-28T18:11:25.430383Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-28T18:11:25.430404Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-28T18:11:25.430409Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-28T18:11:25.430420Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=18,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-28T18:11:25.430457Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-28T18:11:25.430477Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=18 text/plain:    
+[2m2024-07-28T18:11:25.430507Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-28T18:11:25.430519Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-28T18:11:25.435389Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:11:25.435411Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:11:25.435425Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:11:25.435462Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:11:25.436416Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:11:25.438233Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:11:25.444603Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:11:25.444637Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:11:25.451611Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:11:25.451698Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-28T18:11:25.451737Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "4",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-28T18:11:25.451776Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-28T18:11:25.451805Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-28T18:11:25.451831Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 4
+[2m2024-07-28T18:11:25.451836Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m4
+[2m2024-07-28T18:11:25.451917Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-28T18:11:25.451948Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 238 bytes
+[2m2024-07-28T18:11:25.451952Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-28T18:11:35.452832Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:11:35.452879Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-28T18:11:35.452887Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-28T18:11:35.452894Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:11:35.452904Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-28T18:11:35.452909Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:11:35.452914Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:11:35.452918Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:11:35.452943Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-28T18:11:35.452999Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-28T18:12:46.609100Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:12:46.609133Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-28T18:12:46.609142Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-28T18:12:46.609153Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-28T18:12:46.609172Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-28T18:12:46.609176Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-28T18:12:46.609186Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=18,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-28T18:12:46.609211Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-28T18:12:46.609231Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=18 text/plain:    
+[2m2024-07-28T18:12:46.609250Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-28T18:12:46.609260Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-28T18:12:46.614171Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:12:46.614191Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:12:46.614202Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:12:46.614331Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:12:46.615397Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:12:46.617271Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:12:46.623802Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:12:46.623832Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:12:46.631131Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:12:46.631290Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip -> /www/wwwroot/xiacai.xyz/
+[2m2024-07-28T18:12:46.636538Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T18:12:46.636560Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T18:12:46.636572Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T18:12:46.636608Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T18:12:46.637763Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T18:12:46.639596Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T18:12:46.645486Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T18:12:46.645516Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T18:12:46.649287Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T18:12:46.649310Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/xiacai.xyz/
+[2m2024-07-28T18:12:46.649318Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/xiacai.xyz/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip
+[2m2024-07-28T18:12:46.649378Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:12:46.649383Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:12:46.649387Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/xiacai.xyz/
+[2m2024-07-28T18:12:46.649401Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.php"
+[2m2024-07-28T18:12:46.649405Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:12:46.649409Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/xiacai.xyz/index.php
+[2m2024-07-28T18:12:46.649604Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.html"
+[2m2024-07-28T18:12:46.649609Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T18:12:46.649613Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/xiacai.xyz/index.html
+[2m2024-07-28T18:12:46.649845Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-28T18:12:46.649856Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-28T18:12:46.650385Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/xiacai.xyz.conf
+[2m2024-07-28T18:12:46.650473Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-28T18:12:46.824995Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T18:12:46.825018Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-28T18:12:46.994600Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T18:12:46.994685Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-28T18:12:46.994717Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-28T18:12:46.994770Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-28T18:12:46.994826Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-28T18:12:46.994856Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-28T18:12:46.994861Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-28T18:12:46.995141Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-28T18:12:46.995197Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-28T18:12:46.995204Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-28T18:12:56.996128Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T18:12:56.996179Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-28T18:12:56.996188Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-28T18:12:56.996199Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:12:56.996205Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-28T18:12:56.996211Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:12:56.996216Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T18:12:56.996221Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T18:12:56.996227Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-28T18:12:56.996281Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-28T19:03:55.407107Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T19:03:55.407139Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-28T19:03:55.407153Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-28T19:03:55.407164Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-28T19:03:55.407186Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-28T19:03:55.407190Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-28T19:03:55.407202Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=18,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-28T19:03:55.407245Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-28T19:03:55.407265Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=18 text/plain:    
+[2m2024-07-28T19:03:55.407286Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-28T19:03:55.407298Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-28T19:03:55.412669Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T19:03:55.412693Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T19:03:55.412717Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T19:03:55.412822Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T19:03:55.413208Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T19:03:55.415086Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T19:03:55.421208Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T19:03:55.421250Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T19:03:55.427662Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T19:03:55.427983Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip -> /www/wwwroot/xiacai.xyz/
+[2m2024-07-28T19:03:55.433184Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-28T19:03:55.433207Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-28T19:03:55.433220Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-28T19:03:55.433247Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-28T19:03:55.433612Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-28T19:03:55.435465Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-28T19:03:55.441331Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-28T19:03:55.441359Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-28T19:03:55.445119Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-28T19:03:55.445142Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/xiacai.xyz/
+[2m2024-07-28T19:03:55.445149Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/xiacai.xyz/aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a.zip
+[2m2024-07-28T19:03:55.445194Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T19:03:55.445199Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T19:03:55.445204Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/xiacai.xyz/
+[2m2024-07-28T19:03:55.445219Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.php"
+[2m2024-07-28T19:03:55.445223Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T19:03:55.445227Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/xiacai.xyz/index.php
+[2m2024-07-28T19:03:55.445429Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/index.html"
+[2m2024-07-28T19:03:55.445434Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"aa8b2d64-6bc9-43aa-a13b-f5739bac3d9a/"
+[2m2024-07-28T19:03:55.445442Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/xiacai.xyz/index.html
+[2m2024-07-28T19:03:55.445715Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-28T19:03:55.445726Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-28T19:03:55.446282Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/xiacai.xyz.conf
+[2m2024-07-28T19:03:55.446369Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-28T19:03:55.666723Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T19:03:55.666750Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-28T19:03:55.842483Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-28T19:03:55.842567Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-28T19:03:55.842598Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-28T19:03:55.842640Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-28T19:03:55.842693Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-28T19:03:55.842713Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-28T19:03:55.842718Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-28T19:03:55.842753Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-28T19:03:55.842804Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-28T19:03:55.842810Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-28T19:04:05.843622Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-28T19:04:05.843657Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-28T19:04:05.843662Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-28T19:04:05.843668Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T19:04:05.843672Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-28T19:04:05.843676Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T19:04:05.843680Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-28T19:04:05.843683Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-28T19:04:05.843688Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-28T19:04:05.843749Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-29T19:27:33.691438Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-29T19:27:33.691478Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-29T19:27:33.691491Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-29T19:27:33.691501Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-29T19:27:33.691521Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-29T19:27:33.691525Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-29T19:27:33.691536Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=18,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-29T19:27:33.691569Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-29T19:27:33.691588Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=18 text/plain:    
+[2m2024-07-29T19:27:33.691606Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-29T19:27:33.691615Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-29T19:27:33.696850Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-29T19:27:33.696875Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-29T19:27:33.696888Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-29T19:27:33.696986Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-29T19:27:33.697377Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-29T19:27:33.698764Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-29T19:27:33.704006Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-29T19:27:33.704056Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-29T19:27:33.715778Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-29T19:27:33.716174Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-29T19:27:33.716190Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-29T19:27:33.716725Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/xiacai.xyz.conf
+[2m2024-07-29T19:27:33.716809Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-29T19:27:33.938703Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-29T19:27:33.938727Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-29T19:27:34.109905Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-29T19:27:34.109988Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-29T19:27:34.110027Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-29T19:27:34.110092Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-29T19:27:34.110162Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-29T19:27:34.110193Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-29T19:27:34.110198Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-29T19:27:34.110212Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-29T19:27:34.110275Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-29T19:27:34.110280Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-29T19:27:44.111325Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-29T19:27:44.111365Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-29T19:27:44.111370Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-29T19:27:44.111376Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-29T19:27:44.111380Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-29T19:27:44.111384Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-29T19:27:44.111388Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-29T19:27:44.111392Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-29T19:27:44.111397Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-29T19:27:44.111459Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-29T20:23:20.602571Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-29T20:23:20.602602Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-29T20:23:20.602614Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-29T20:23:20.602625Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-29T20:23:20.602643Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-29T20:23:20.602649Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-29T20:23:20.602658Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=15,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-29T20:23:20.602690Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-29T20:23:20.602711Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=15 text/plain:    
+[2m2024-07-29T20:23:20.602739Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-29T20:23:20.602750Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-29T20:23:20.607663Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-29T20:23:20.607684Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-29T20:23:20.607695Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-29T20:23:20.607810Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-29T20:23:20.653972Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-29T20:23:20.655452Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-29T20:23:20.660683Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-29T20:23:20.660713Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-29T20:23:20.670629Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-29T20:23:20.670994Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-29T20:23:20.671009Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-29T20:23:20.671500Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/ppcstoke.com.conf
+[2m2024-07-29T20:23:20.671580Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-29T20:23:20.883786Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-29T20:23:20.883816Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-29T20:23:21.098902Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-29T20:23:21.098976Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-29T20:23:21.099006Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-29T20:23:21.099062Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-29T20:23:21.099103Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-29T20:23:21.099133Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-29T20:23:21.099138Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-29T20:23:21.099144Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-29T20:23:21.099200Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-29T20:23:21.099213Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-29T20:23:31.100110Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-29T20:23:31.100147Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-29T20:23:31.100153Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-29T20:23:31.100158Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-29T20:23:31.100162Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-29T20:23:31.100166Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-29T20:23:31.100170Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-29T20:23:31.100173Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-29T20:23:31.100178Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-29T20:23:31.100231Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-29T20:38:15.089909Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-29T20:38:15.089939Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-29T20:38:15.089951Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-29T20:38:15.089961Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-29T20:38:15.089982Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-29T20:38:15.089987Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-29T20:38:15.089996Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=15,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-29T20:38:15.090028Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-29T20:38:15.090074Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=15 text/plain:    
+[2m2024-07-29T20:38:15.090096Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-29T20:38:15.090106Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-29T20:38:15.095139Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-29T20:38:15.095166Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-29T20:38:15.095177Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-29T20:38:15.095281Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-29T20:38:15.096249Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-29T20:38:15.097638Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-29T20:38:15.102400Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-29T20:38:15.102442Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-29T20:38:15.112769Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-29T20:38:15.113021Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-29T20:38:15.113058Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-29T20:38:15.113611Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/ppcstoke.com.conf
+[2m2024-07-29T20:38:15.113700Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-29T20:38:15.338959Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-29T20:38:15.338981Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-29T20:38:15.555967Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-29T20:38:15.556052Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-29T20:38:15.556084Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-29T20:38:15.556131Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-29T20:38:15.556196Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-29T20:38:15.556231Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-29T20:38:15.556237Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-29T20:38:15.556247Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-29T20:38:15.556324Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-29T20:38:15.556333Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-29T20:38:25.557254Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-29T20:38:25.557295Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-29T20:38:25.557300Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-29T20:38:25.557306Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-29T20:38:25.557310Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-29T20:38:25.557314Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-29T20:38:25.557318Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-29T20:38:25.557322Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-29T20:38:25.557326Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-29T20:38:25.557392Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-30T13:08:20.695957Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T13:08:20.695990Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-30T13:08:20.696003Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-30T13:08:20.696014Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-30T13:08:20.696034Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-30T13:08:20.696059Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-30T13:08:20.696069Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=15,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-30T13:08:20.696103Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-30T13:08:20.696125Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=15 text/plain:    
+[2m2024-07-30T13:08:20.696147Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-30T13:08:20.696159Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-30T13:08:20.701017Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-30T13:08:20.701053Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-30T13:08:20.701065Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-30T13:08:20.701175Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-30T13:08:20.702534Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-30T13:08:20.703990Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-30T13:08:20.708720Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-30T13:08:20.708749Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-30T13:08:20.718849Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-30T13:08:20.719135Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-30T13:08:20.719151Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-30T13:08:20.720209Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/ppcstoke.com.conf
+[2m2024-07-30T13:08:20.720312Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-30T13:08:20.936059Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T13:08:20.936086Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-30T13:08:21.107137Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T13:08:21.107203Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-30T13:08:21.107231Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-30T13:08:21.107276Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-30T13:08:21.107330Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-30T13:08:21.107362Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-30T13:08:21.107367Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-30T13:08:21.107376Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-30T13:08:21.107432Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-30T13:08:21.107437Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-30T13:08:26.108218Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T13:08:26.108253Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-30T13:08:26.108258Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-30T13:08:26.108264Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T13:08:26.108267Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-30T13:08:26.108271Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T13:08:26.108274Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T13:08:26.108277Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T13:08:26.108281Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-30T13:08:26.108349Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-30T13:27:08.700620Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T13:27:08.700653Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-30T13:27:08.700665Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-30T13:27:08.700676Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-30T13:27:08.700697Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-30T13:27:08.700703Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-30T13:27:08.700713Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=18,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-30T13:27:08.700746Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-30T13:27:08.700776Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=18 text/plain:    
+[2m2024-07-30T13:27:08.700796Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-30T13:27:08.700806Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-30T13:27:08.705678Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-30T13:27:08.705713Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-30T13:27:08.705728Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-30T13:27:08.705842Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-30T13:27:08.706261Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-30T13:27:08.707706Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-30T13:27:08.712408Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-30T13:27:08.712437Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-30T13:27:08.720810Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-30T13:27:08.721075Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-30T13:27:08.721089Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-30T13:27:08.721592Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/xiacai.xyz.conf
+[2m2024-07-30T13:27:08.721682Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-30T13:27:09.315502Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T13:27:09.315526Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-30T13:27:09.486366Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T13:27:09.486434Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-30T13:27:09.486464Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-30T13:27:09.486508Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-30T13:27:09.486559Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-30T13:27:09.486594Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-30T13:27:09.486601Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-30T13:27:09.486610Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-30T13:27:09.486675Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-30T13:27:09.486680Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-30T13:27:19.487645Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T13:27:19.487683Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-30T13:27:19.487687Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-30T13:27:19.487693Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T13:27:19.487696Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-30T13:27:19.487700Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T13:27:19.487704Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T13:27:19.487707Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T13:27:19.487711Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-30T13:27:19.487763Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-30T13:33:32.885227Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T13:33:32.885260Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-30T13:33:32.885272Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-30T13:33:32.885283Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-30T13:33:32.885305Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-30T13:33:32.885310Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-30T13:33:32.885321Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=15,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-30T13:33:32.885357Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-30T13:33:32.885377Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=15 text/plain:    
+[2m2024-07-30T13:33:32.885396Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-30T13:33:32.885406Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-30T13:33:32.890312Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-30T13:33:32.890335Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-30T13:33:32.890348Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-30T13:33:32.890459Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-30T13:33:32.891497Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-30T13:33:32.892962Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-30T13:33:32.898133Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-30T13:33:32.898173Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-30T13:33:32.910300Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-30T13:33:32.910614Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-30T13:33:32.910632Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-30T13:33:32.911406Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/ppcstoke.com.conf
+[2m2024-07-30T13:33:32.911518Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-30T13:33:33.136877Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T13:33:33.136900Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-30T13:33:33.351086Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T13:33:33.351163Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-30T13:33:33.351195Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-30T13:33:33.351239Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-30T13:33:33.351304Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-30T13:33:33.351333Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-30T13:33:33.351337Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-30T13:33:33.351347Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-30T13:33:33.351407Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-30T13:33:33.351412Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-30T13:33:38.352216Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T13:33:38.352251Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-30T13:33:38.352256Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-30T13:33:38.352261Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T13:33:38.352265Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-30T13:33:38.352268Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T13:33:38.352272Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T13:33:38.352275Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T13:33:38.352280Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-30T13:33:38.352340Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-30T19:37:58.951789Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T19:37:58.951821Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-30T19:37:58.951833Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-30T19:37:58.951843Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-30T19:37:58.951864Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-30T19:37:58.951869Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-30T19:37:58.951879Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=18,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-30T19:37:58.951914Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-30T19:37:58.951933Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=18 text/plain:    
+[2m2024-07-30T19:37:58.951952Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-30T19:37:58.951962Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-30T19:37:58.956907Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-30T19:37:58.956930Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-30T19:37:58.956942Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-30T19:37:58.957062Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-30T19:37:59.004032Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-30T19:37:59.005554Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-30T19:37:59.010193Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-30T19:37:59.010230Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-30T19:37:59.022546Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-30T19:37:59.022813Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-30T19:37:59.022829Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-30T19:37:59.023337Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/xiacai.xyz.conf
+[2m2024-07-30T19:37:59.023418Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 检测NGINX配置文件是否正确
+[2m2024-07-30T19:37:59.245010Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T19:37:59.245054Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 重启NGINX
+[2m2024-07-30T19:37:59.425656Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 
+[2m2024-07-30T19:37:59.425721Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-30T19:37:59.425749Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "2",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-30T19:37:59.425791Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-30T19:37:59.425852Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-30T19:37:59.425884Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 2
+[2m2024-07-30T19:37:59.425889Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m2
+[2m2024-07-30T19:37:59.425899Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-30T19:37:59.425956Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 236 bytes
+[2m2024-07-30T19:37:59.425963Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-30T19:38:09.426888Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-30T19:38:09.426929Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-30T19:38:09.426935Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-30T19:38:09.426941Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T19:38:09.426945Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-30T19:38:09.426949Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T19:38:09.426953Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-30T19:38:09.426956Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-30T19:38:09.426961Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-30T19:38:09.427015Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
+[2m2024-07-31T00:55:22.967766Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-31T00:55:22.967798Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 179 bytes
+[2m2024-07-31T00:55:22.967811Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse [3mbytes[0m[2m=[0m179
+[2m2024-07-31T00:55:22.967821Z[0m [35mTRACE[0m [1mparse_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Request.parse Complete(179)
+[2m2024-07-31T00:55:22.967842Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m parsed 4 headers
+[2m2024-07-31T00:55:22.967848Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m incoming body is empty
+[2m2024-07-31T00:55:22.967858Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m received request: Request {
+    method: GET,
+    uri: /deploy/domain?domain_id=20,
+    version: HTTP/1.1,
+    headers: {
+        "accept": "text/plain, application/json, application/*+json, */*",
+        "user-agent": "Java/17.0.11",
+        "host": "localhost:8000",
+        "connection": "keep-alive",
+    },
+    body: Body(
+        Empty,
+    ),
+}    
+[2m2024-07-31T00:55:22.967901Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: KeepAlive, writing: Init, keep_alive: Busy }
+[2m2024-07-31T00:55:22.967921Z[0m [32m INFO[0m [2mrocket::server[0m[2m:[0m GET /deploy/domain?domain_id=20 text/plain:    
+[2m2024-07-31T00:55:22.967942Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Matched: (deploy_domain) GET /deploy/domain?<domain_id>    
+[2m2024-07-31T00:55:22.967951Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 开始部署
+[2m2024-07-31T00:55:22.972865Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-31T00:55:22.972890Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-31T00:55:22.972901Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-31T00:55:22.973014Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-31T00:55:23.012909Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-31T00:55:23.014356Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-31T00:55:23.019108Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-31T00:55:23.019141Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-31T00:55:23.025670Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pool dropped, dropping pooled (("https", console.d-l.ink))
+[2m2024-07-31T00:55:23.025834Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载网站 https://console.d-l.ink/preview/14724aac-7c40-475b-955a-b25168f30943.zip -> /www/wwwroot/7e33.shop/
+[2m2024-07-31T00:55:23.031196Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout waiting for idle connection: ("https", console.d-l.ink)
+[2m2024-07-31T00:55:23.031222Z[0m [34mDEBUG[0m [2mreqwest::connect[0m[2m:[0m starting new connection: https://console.d-l.ink/    
+[2m2024-07-31T00:55:23.031233Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m Http::connect; scheme=Some("https"), host=Some("console.d-l.ink"), port=None
+[2m2024-07-31T00:55:23.031263Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::dns[0m[2m:[0m resolving host="console.d-l.ink"
+[2m2024-07-31T00:55:23.032755Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connecting to 43.128.143.164:443
+[2m2024-07-31T00:55:23.034134Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::connect::http[0m[2m:[0m connected to 43.128.143.164:443
+[2m2024-07-31T00:55:23.039432Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::client[0m[2m:[0m http1 handshake complete, spawning background dispatcher task
+[2m2024-07-31T00:55:23.039462Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m checkout dropped for ("https", console.d-l.ink)
+[2m2024-07-31T00:55:23.040964Z[0m [35mTRACE[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m put; add idle connection for ("https", console.d-l.ink)
+[2m2024-07-31T00:55:23.040983Z[0m [34mDEBUG[0m [2mhyper_util::client::legacy::pool[0m[2m:[0m pooling idle connection for ("https", console.d-l.ink)
+[2m2024-07-31T00:55:23.041065Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 下载完成 -> /www/wwwroot/7e33.shop/
+[2m2024-07-31T00:55:23.041072Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压 -> /www/wwwroot/7e33.shop/14724aac-7c40-475b-955a-b25168f30943.zip
+[2m2024-07-31T00:55:23.041119Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-31T00:55:23.041130Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-31T00:55:23.041135Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/7e33.shop/
+[2m2024-07-31T00:55:23.041154Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/index.php"
+[2m2024-07-31T00:55:23.041158Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-31T00:55:23.041164Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/7e33.shop/index.php
+[2m2024-07-31T00:55:23.041254Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mfile_name[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/index.html"
+[2m2024-07-31T00:55:23.041259Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m [3mremoval_parent_dir[0m[2m=[0m"14724aac-7c40-475b-955a-b25168f30943/"
+[2m2024-07-31T00:55:23.041263Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 解压文件 -> /www/wwwroot/7e33.shop/index.html
+[2m2024-07-31T00:55:23.041378Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m glob converted to regex: Glob { glob: "*", re: "(?-u)^[^/]*$", opts: GlobOptions { case_insensitive: false, literal_separator: true, backslash_escape: true, empty_alternates: false }, tokens: Tokens([ZeroOrMore]) }    
+[2m2024-07-31T00:55:23.041388Z[0m [34mDEBUG[0m [2mglobset[0m[2m:[0m built glob set; 0 literals, 0 basenames, 0 extensions, 0 prefixes, 0 suffixes, 0 required extensions, 1 regexes    
+[2m2024-07-31T00:55:23.041894Z[0m [32m INFO[0m [2mhaishi_agent[0m[2m:[0m 写入配置文件 -> /www/server/panel/vhost/nginx/7e33.shop.conf
+[2m2024-07-31T00:55:23.041925Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Outcome: Success(200 OK)    
+[2m2024-07-31T00:55:23.041948Z[0m [34mDEBUG[0m [2mrocket::server[0m[2m:[0m sending response: Response {
+    status: 200,
+    version: HTTP/1.1,
+    headers: {
+        "content-type": "text/plain; charset=utf-8",
+        "server": "Rocket",
+        "permissions-policy": "interest-cohort=()",
+        "x-frame-options": "SAMEORIGIN",
+        "x-content-type-options": "nosniff",
+        "content-length": "4",
+    },
+    body: Body(
+        Streaming,
+    ),
+}    
+[2m2024-07-31T00:55:23.041982Z[0m [32m INFO[0m [2mrocket::server::_[0m[2m:[0m Response succeeded.    
+[2m2024-07-31T00:55:23.042005Z[0m [35mTRACE[0m [1mencode_headers[0m[2m:[0m [2mhyper::proto::h1::role[0m[2m:[0m Server::encode status=200, body=Some(Unknown), req_method=Some(GET)
+[2m2024-07-31T00:55:23.042019Z[0m [35mTRACE[0m [2mhyper::proto::h1::encode[0m[2m:[0m sized write, len = 4
+[2m2024-07-31T00:55:23.042023Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m buffer.queue [3mself.len[0m[2m=[0m234 [3mbuf.len[0m[2m=[0m4
+[2m2024-07-31T00:55:23.042028Z[0m [35mTRACE[0m [2mhyper::proto::h1::dispatch[0m[2m:[0m no more write body allowed, user body is_end_stream = false
+[2m2024-07-31T00:55:23.042076Z[0m [34mDEBUG[0m [2mhyper::proto::h1::io[0m[2m:[0m flushed 238 bytes
+[2m2024-07-31T00:55:23.042082Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Init, writing: Init, keep_alive: Idle }
+[2m2024-07-31T00:55:33.042979Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m Conn::read_head
+[2m2024-07-31T00:55:33.043024Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m received 0 bytes
+[2m2024-07-31T00:55:33.043031Z[0m [35mTRACE[0m [2mhyper::proto::h1::io[0m[2m:[0m parse eof
+[2m2024-07-31T00:55:33.043059Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-31T00:55:33.043065Z[0m [34mDEBUG[0m [2mhyper::proto::h1::conn[0m[2m:[0m read eof
+[2m2024-07-31T00:55:33.043071Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-31T00:55:33.043090Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_read()
+[2m2024-07-31T00:55:33.043095Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m State::close_write()
+[2m2024-07-31T00:55:33.043101Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m flushed({role=server}): State { reading: Closed, writing: Closed, keep_alive: Disabled }
+[2m2024-07-31T00:55:33.043151Z[0m [35mTRACE[0m [2mhyper::proto::h1::conn[0m[2m:[0m shut down IO complete
