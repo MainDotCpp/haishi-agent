@@ -44,8 +44,10 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     // NGINX 配置文件目录
     let www_path = Path::new(&www_path);
     let website_path = www_path.join(format!("{}/index", domain_config.domain.as_ref().unwrap()));
+    info!("网站目录 -> {}", website_path.to_str().unwrap());
     // 删除目录所有文件
     if website_path.exists() {
+        info!("删除目录 -> {}", website_path.to_str().unwrap());
         fs::remove_dir_all(&website_path)?;
     }
     for website in domain_config.websites.as_ref().unwrap() {
@@ -56,6 +58,7 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
         }
     }
 
+    info!("生成NGINX配置文件");
     // 加载模板引擎
     let tera = Tera::new("templates/*")?;
     let mut context = Context::new();
