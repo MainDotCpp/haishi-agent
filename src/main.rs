@@ -207,7 +207,7 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
         ]).output().expect("certbot fail");
     info!("{}", String::from_utf8_lossy(&output.stdout));
 
-    // 将证书文件链接到网站目录下的ssl目录
+    // 将证书文件拷贝到网站目录下的ssl目录
     let ssl_path = domain_path.join("ssl");
     if !ssl_path.exists() {
         fs::create_dir_all(&ssl_path)?;
@@ -223,7 +223,7 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
         if link_path.exists() {
             fs::remove_file(&link_path).expect("file remove fail");
         }
-        fs::hard_link(&file_path, &link_path).expect("file link fail");
+        fs::copy(file_path, &link_path).expect("file copy fail");
     }
 
     Ok(true)
