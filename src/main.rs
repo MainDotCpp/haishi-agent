@@ -89,7 +89,7 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
 }
 
 fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
-    let zip_file_name = zip_file.file_name().as_ref().unwrap().to_str().unwrap();
+    let mut zip_file_name = zip_file.file_name().as_ref().unwrap().to_str().unwrap();
     let zip_file = File::open(zip_file).unwrap();
     let mut archive = ZipArchive::new(zip_file).unwrap();
     // 获取压缩包文件名
@@ -98,7 +98,10 @@ fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
         let mut file = archive.by_index(i).unwrap();
         let mut file_name = file.name().to_owned();
         // ZIP迭代器的第一个文件名是目录名，需要去掉
-        file_name.remove(0);
+        // file_name.remove(0);
+        if file_name.starts_with("/"){
+             file_name= file_name.strip_prefix("/").unwrap().to_string();
+        }
         let removal_parent_dir = format!("{}/", zip_file_name.strip_suffix(".zip").unwrap());
         info!(file_name);
         info!(removal_parent_dir);
@@ -187,3 +190,4 @@ fn rocket() -> _ {
     init();
     rocket::build().mount("/", rocket::routes![deploy_domain])
 }
+
