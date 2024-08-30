@@ -187,9 +187,11 @@ async fn download_website(domain_path: &Path, website: &Websites) {
 async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
     let lets_encrypt_path = Path::new("/etc/letsencrypt");
     let www_path = env::var("WWW_PATH")?;
-
-
     let domain_config = get_domain_info(domain_id).await.expect("domain info load fail");
+    
+    let domain_path = Path::new(&www_path).join(domain_config.domain.as_ref().unwrap());
+
+
     let output = std::process::Command::new("certbot")
         .args([
             "certonly",
@@ -197,7 +199,7 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
             "-w",
             "/www/wwwroot",
             "-d",
-            &domain_config.domain.as_ref().unwrap(),
+            domain_path.join("index").to_str().unwrap(),
             "--email",
             "haishi@gmail.com",
             "--agree-tos",
@@ -205,7 +207,6 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
     info!("{}", String::from_utf8_lossy(&output.stdout));
 
     // 将证书文件链接到网站目录下的ssl目录
-    let domain_path = Path::new(&www_path).join(domain_config.domain.as_ref().unwrap());
     let ssl_path = domain_path.join("ssl");
     if !ssl_path.exists() {
         fs::create_dir_all(&ssl_path)?;
