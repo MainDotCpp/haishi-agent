@@ -192,6 +192,7 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
     let domain_path = Path::new(&www_path).join(domain_config.domain.as_ref().unwrap());
 
 
+    info!("网站目录 -> {}", domain_path.to_str().unwrap());
     let output = std::process::Command::new("certbot")
         .args([
             "certonly",

@@ -1,8 +1,6 @@
 server {
     listen 80 ;
-    {% if config.ssl %}
     listen 443 ssl http2 ;
-    {% endif %}
     server_name {{ config.domain }};
     index index.php index.html index.htm default.php default.htm default.html; 
     proxy_set_header Host $host; 
