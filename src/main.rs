@@ -50,6 +50,8 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
         info!("删除目录 -> {}", website_path.to_str().unwrap());
         fs::remove_dir_all(&website_path)?;
     }
+    // 创建目录
+    fs::create_dir_all(&website_path)?;
     for website in domain_config.websites.as_ref().unwrap() {
         if website.websites_type.as_ref().unwrap().eq("LANDING") {
             download_website(&website_path, &website).await;
