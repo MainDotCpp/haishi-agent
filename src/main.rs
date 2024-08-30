@@ -32,8 +32,8 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
         "https://console.d-l.ink/api/domain/getAgentConfig?id={}",
         domain_id
     ))
-    .await
-    .expect("config load fail");
+        .await
+        .expect("config load fail");
     let domain_config = response.json::<domain_config::DomainConfig>().await?;
 
     // NGINX 配置文件目录
@@ -99,8 +99,8 @@ fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
         let mut file_name = file.name().to_owned();
         // ZIP迭代器的第一个文件名是目录名，需要去掉
         // file_name.remove(0);
-        if file_name.starts_with("/"){
-             file_name= file_name.strip_prefix("/").unwrap().to_string();
+        if file_name.starts_with("/") {
+            file_name = file_name.strip_prefix("/").unwrap().to_string();
         }
         let removal_parent_dir = format!("{}/", zip_file_name.strip_suffix(".zip").unwrap());
         info!(file_name);
@@ -176,6 +176,23 @@ async fn download_website(domain_path: &Path, website: &Websites) {
     fs::write(config_path, config_content).expect("file write fail");
 }
 
+fn config_ssl_by_certbot(domain_id: i32) {
+    let domain = format!("{}.d-l.ink", domain_id);
+    let certbot = std::process::Command::new("certbot")
+        .args([
+            "certonly",
+            "--webroot",
+            "-w",
+            "/www/wwwroot",
+            "-d",
+            &domain,
+            "--email",
+            "haishi@gmail.com",
+            "--agree-tos",
+        ]);
+    let output = certbot.output().expect("certbot fail");
+    info!("{}", String::from_utf8_lossy(&output.stdout));
+}
 #[get("/deploy/domain?<domain_id>")]
 async fn deploy_domain(domain_id: i32) -> &'static str {
     info!("开始部署");
@@ -185,9 +202,18 @@ async fn deploy_domain(domain_id: i32) -> &'static str {
     }
 }
 
+#[get("/config/ssl?<domain_id>")]
+async fn config_ssl(domain_id: i32) -> &'static str {
+    info!("配置证书");
+    match save_config(domain_id).await {
+        Ok(_) => "OK",
+        Err(_) => "FAIL",
+    }
+}
+
 #[launch]
 fn rocket() -> _ {
     init();
-    rocket::build().mount("/", rocket::routes![deploy_domain])
+    rocket::build().mount("/", rocket::routes![deploy_domain, config_ssl])
 }
 

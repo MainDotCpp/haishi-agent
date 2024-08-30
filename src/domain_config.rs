@@ -169,6 +169,9 @@ pub struct DomainConfig {
 	#[serde(rename = "server")]
 	pub server: Option<Server>,
 
+	#[serde(rename="ssl")]
+	pub ssl: Option<bool>,
+	
 	#[serde(rename = "websites")]
 	pub websites: Option<Vec<Websites>>,
 }
