@@ -57,6 +57,20 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
             generate_path_dir(&website_path, &website).await;
         }
     }
+    
+    // 创建日志文件
+    let log_path = website_path.join("logs");
+    if !log_path.exists() {
+        fs::create_dir_all(&log_path)?;
+    }
+    let access_log = log_path.join("access.log");
+    let error_log = log_path.join("error.log");
+    if !access_log.exists() {
+        fs::write(access_log, "").expect("file write fail");
+    }
+    if !error_log.exists() {
+        fs::write(error_log, "").expect("file write fail");
+    }
 
     info!("生成NGINX配置文件");
     // 加载模板引擎
