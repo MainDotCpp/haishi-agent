@@ -187,7 +187,7 @@ async fn download_website(domain_path: &Path, website: &Websites) {
 async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
     let lets_encrypt_path = Path::new("/etc/letsencrypt");
     let www_path = env::var("WWW_PATH")?;
-    
+
 
     let domain_config = get_domain_info(domain_id).await.expect("domain info load fail");
     let output = std::process::Command::new("certbot")
@@ -201,7 +201,6 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
             "--email",
             "haishi@gmail.com",
             "--agree-tos",
-            "--nginx-server-root",
         ]).output().expect("certbot fail");
     info!("{}", String::from_utf8_lossy(&output.stdout));
 
@@ -224,7 +223,7 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
         }
         fs::hard_link(&file_path, &link_path).expect("file link fail");
     }
-   
+
     Ok(true)
 }
 #[get("/deploy/domain?<domain_id>")]
