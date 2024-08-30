@@ -23,11 +23,7 @@ fn init() {
     dotenv().ok();
 }
 
-async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
-    let nginx_config_path = env::var("NGINX_CONFIG_PATH")?;
-    let www_path = env::var("WWW_PATH")?;
-
-    // 获取域名配置数据
+async fn get_domain_info(domain_id: i32) -> Result<domain_config::DomainConfig, Box<dyn Error>> {
     let response = reqwest::get(format!(
         "https://console.d-l.ink/api/domain/getAgentConfig?id={}",
         domain_id
@@ -35,6 +31,14 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
         .await
         .expect("config load fail");
     let domain_config = response.json::<domain_config::DomainConfig>().await?;
+    Ok(domain_config)
+}
+
+async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
+    let nginx_config_path = env::var("NGINX_CONFIG_PATH")?;
+    let www_path = env::var("WWW_PATH")?;
+
+    let domain_config = get_domain_info(domain_id).await?;
 
     // NGINX 配置文件目录
     let www_path = Path::new(&www_path);
@@ -85,11 +89,11 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
             .expect("nginx reload fail");
         info!("{}", String::from_utf8_lossy(&nginx_reload.stdout));
     }
-    return Ok(true);
+    Ok(true)
 }
 
 fn unzip_file(zip_file: &PathBuf, output_dir: &Path) {
-    let mut zip_file_name = zip_file.file_name().as_ref().unwrap().to_str().unwrap();
+    let zip_file_name = zip_file.file_name().as_ref().unwrap().to_str().unwrap();
     let zip_file = File::open(zip_file).unwrap();
     let mut archive = ZipArchive::new(zip_file).unwrap();
     // 获取压缩包文件名
@@ -176,22 +180,22 @@ async fn download_website(domain_path: &Path, website: &Websites) {
     fs::write(config_path, config_content).expect("file write fail");
 }
 
-fn config_ssl_by_certbot(domain_id: i32) {
-    let domain = format!("{}.d-l.ink", domain_id);
-    let certbot = std::process::Command::new("certbot")
+async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
+    let domain_config = get_domain_info(domain_id).await.expect("domain info load fail");
+    let output = std::process::Command::new("certbot")
         .args([
             "certonly",
             "--webroot",
             "-w",
             "/www/wwwroot",
             "-d",
-            &domain,
+            &domain_config.domain.as_ref().unwrap(),
             "--email",
             "haishi@gmail.com",
             "--agree-tos",
-        ]);
-    let output = certbot.output().expect("certbot fail");
+        ]).output().expect("certbot fail");
     info!("{}", String::from_utf8_lossy(&output.stdout));
+    Ok(true)
 }
 #[get("/deploy/domain?<domain_id>")]
 async fn deploy_domain(domain_id: i32) -> &'static str {
@@ -205,7 +209,7 @@ async fn deploy_domain(domain_id: i32) -> &'static str {
 #[get("/config/ssl?<domain_id>")]
 async fn config_ssl(domain_id: i32) -> &'static str {
     info!("配置证书");
-    match save_config(domain_id).await {
+    match config_ssl_by_certbot(domain_id).await {
         Ok(_) => "OK",
         Err(_) => "FAIL",
     }
