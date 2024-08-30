@@ -6,7 +6,6 @@ use std::{env, fs};
 
 use dotenv::dotenv;
 use rocket::{get, launch};
-use rocket::http::uri::fmt::Kind::Path;
 use tera::{Context, Tera};
 use tracing::info;
 use tracing_subscriber::fmt;
