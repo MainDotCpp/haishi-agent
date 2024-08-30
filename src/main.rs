@@ -24,6 +24,7 @@ fn init() {
 }
 
 async fn get_domain_info(domain_id: i32) -> Result<domain_config::DomainConfig, Box<dyn Error>> {
+    info!("加载配置文件 -> domain_id:{}", domain_id);
     let response = reqwest::get(format!(
         "https://console.d-l.ink/api/domain/getAgentConfig?id={}",
         domain_id
@@ -38,7 +39,7 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
     let nginx_config_path = env::var("NGINX_CONFIG_PATH")?;
     let www_path = env::var("WWW_PATH")?;
 
-    let domain_config = get_domain_info(domain_id).await?;
+    let domain_config = get_domain_info(domain_id).await.expect("配置文件加载失败");
 
     // NGINX 配置文件目录
     let www_path = Path::new(&www_path);
