@@ -14,10 +14,7 @@ server {
     proxy_set_header Connection "upgrade"; 
     access_log /www/sites/{{ config.domain }}/log/access.log main; 
     error_log /www/sites/{{ config.domain }}/log/error.log; 
-    location ^~ /.well-known/acme-challenge {
-        allow all; 
-        root /usr/share/nginx/html; 
-    }
+
     error_page 497 https://$host$request_uri; 
     root /www/sites/{{ config.domain }}/index; 
     location ~ [^/]\.php(/|$) {
