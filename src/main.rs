@@ -57,9 +57,9 @@ async fn save_config(domain_id: i32) -> Result<bool, Box<dyn Error>> {
             generate_path_dir(&website_path, &website).await;
         }
     }
-    
+
     // 创建日志文件
-    let log_path = website_path.join("logs");
+    let log_path = www_path.join(format!("{}/log", domain_config.domain.as_ref().unwrap()));
     if !log_path.exists() {
         fs::create_dir_all(&log_path)?;
     }
@@ -202,7 +202,7 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
     let lets_encrypt_path = Path::new("/etc/letsencrypt");
     let www_path = env::var("WWW_PATH")?;
     let domain_config = get_domain_info(domain_id).await.expect("domain info load fail");
-    
+
     let domain_path = Path::new(&www_path).join(domain_config.domain.as_ref().unwrap());
 
 
