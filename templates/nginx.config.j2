@@ -34,7 +34,7 @@ server {
     if ($scheme = http) {
         return 301 https://$host$request_uri; 
     }
-    ${ if config.ssl }
+    {{ if config.ssl }}
     ssl_certificate /www/sites/{{ config.domain }}/ssl/fullchain.pem; 
     ssl_certificate_key /www/sites/{{ config.domain }}/ssl/privkey.pem; 
     ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1 TLSv1; 
@@ -44,6 +44,6 @@ server {
     ssl_session_timeout 10m; 
     proxy_set_header X-Forwarded-Proto https; 
     add_header Strict-Transport-Security "max-age=31536000";
-    ${ endif }
+    {{ endif }}
 }
 
