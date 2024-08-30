@@ -185,6 +185,10 @@ async fn download_website(domain_path: &Path, website: &Websites) {
 }
 
 async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
+    let lets_encrypt_path = "/etc/letsencrypt/live";
+    let www_path = env::var("WWW_PATH")?;
+    
+
     let domain_config = get_domain_info(domain_id).await.expect("domain info load fail");
     let output = std::process::Command::new("certbot")
         .args([
@@ -197,8 +201,28 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
             "--email",
             "haishi@gmail.com",
             "--agree-tos",
+            "--nginx-server-root",
         ]).output().expect("certbot fail");
     info!("{}", String::from_utf8_lossy(&output.stdout));
+
+    // 将证书文件链接到网站目录下的ssl目录
+    let domain_path = Path::new(&www_path).join(domain_config.domain.as_ref().unwrap());
+    let ssl_path = domain_path.join("ssl");
+    if !ssl_path.exists() {
+        fs::create_dir_all(&ssl_path)?;
+    }
+    let cert_path = domain_path.join("fullchain.pem");
+    let key_path = domain_path.join("privkey.pem");
+    let cert_link = ssl_path.join("fullchain.pem");
+    let key_link = ssl_path.join("privkey.pem");
+    if cert_link.exists() {
+        fs::remove_file(&cert_link)?;
+    }
+    if key_link.exists() {
+        fs::remove_file(&key_link)?;
+    }
+    fs::hard_link(cert_path, cert_link)?;
+    fs::hard_link(key_path, key_link)?;
     Ok(true)
 }
 #[get("/deploy/domain?<domain_id>")]
