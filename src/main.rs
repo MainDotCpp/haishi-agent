@@ -30,7 +30,7 @@ async fn get_domain_info(domain_id: i32) -> Result<domain_config::DomainConfig, 
     ))
         .await
         .expect("config load fail");
-    let domain_config = response.json::<domain_config::DomainConfig>().await?;
+    let domain_config = response.json::<domain_config::DomainConfig>().await.expect("json parse fail");
     Ok(domain_config)
 }
 
