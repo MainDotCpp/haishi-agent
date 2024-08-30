@@ -6,6 +6,7 @@ use std::{env, fs};
 
 use dotenv::dotenv;
 use rocket::{get, launch};
+use rocket::http::uri::fmt::Kind::Path;
 use tera::{Context, Tera};
 use tracing::info;
 use tracing_subscriber::fmt;
@@ -185,7 +186,7 @@ async fn download_website(domain_path: &Path, website: &Websites) {
 }
 
 async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
-    let lets_encrypt_path = "/etc/letsencrypt/live";
+    let lets_encrypt_path = Path::new("/etc/letsencrypt");
     let www_path = env::var("WWW_PATH")?;
     
 
@@ -211,18 +212,20 @@ async fn config_ssl_by_certbot(domain_id: i32) -> Result<bool, Box<dyn Error>>{
     if !ssl_path.exists() {
         fs::create_dir_all(&ssl_path)?;
     }
-    let cert_path = domain_path.join("fullchain.pem");
-    let key_path = domain_path.join("privkey.pem");
-    let cert_link = ssl_path.join("fullchain.pem");
-    let key_link = ssl_path.join("privkey.pem");
-    if cert_link.exists() {
-        fs::remove_file(&cert_link)?;
+    let cert_path = lets_encrypt_path.join("live").join(domain_config.domain.as_ref().unwrap());
+    let cert_files = fs::read_dir(cert_path).expect("cert file read fail");
+    for file in cert_files {
+        let file = file.expect("file read fail");
+        let file_name = file.file_name();
+        let file_name = file_name.to_str().unwrap();
+        let file_path = file.path();
+        let link_path = ssl_path.join(file_name);
+        if link_path.exists() {
+            fs::remove_file(&link_path).expect("file remove fail");
+        }
+        fs::hard_link(&file_path, &link_path).expect("file link fail");
     }
-    if key_link.exists() {
-        fs::remove_file(&key_link)?;
-    }
-    fs::hard_link(cert_path, cert_link)?;
-    fs::hard_link(key_path, key_link)?;
+   
     Ok(true)
 }
 #[get("/deploy/domain?<domain_id>")]
