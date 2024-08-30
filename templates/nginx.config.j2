@@ -31,10 +31,11 @@ server {
         fastcgi_param SCRIPT_NAME $real_script_name; 
         fastcgi_param PATH_INFO $path_info; 
     }
+    { % if config.ssl % }
+
     if ($scheme = http) {
         return 301 https://$host$request_uri; 
     }
-    { % if config.ssl % }
     ssl_certificate /www/sites/{{ config.domain }}/ssl/fullchain.pem;
     ssl_certificate_key /www/sites/{{ config.domain }}/ssl/privkey.pem;
     ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1 TLSv1;
