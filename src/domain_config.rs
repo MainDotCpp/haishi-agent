@@ -157,6 +157,12 @@ pub struct Websites {
 
 	#[serde(rename = "extraScript")]
 	pub extra_script: Option<String>,
+
+	#[serde(rename = "pixelId")]
+	pub pixel_id: Option<String>,
+
+	#[serde(rename = "banRedirectLink")]
+	pub ban_redirect_link: Option<String>,
 }
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DomainConfig {
